@@ -50,26 +50,27 @@ Example Configuration:
 ```
 
 Explanation:
-**TickMs**: 1000 => Sets the time between each tick.
-**TestDurationInMinutes**: 3 => Duration in Minutes. The program will shut down after this time.
-**ClientCount**: "20" => This will create 20 clients that run in parallel.
-**BrokerConfiguration** => Configuration parameters for the broker endpoint.
-**BrokerType**: "Mqtt" => Clients will connect to a MQTT Broker
-**BrokerEndpoint**: "hivemq" => Broker address (hivemq due to the docker-compose file. For local running broker use "127.0.0.1")
-**BrokerPort**: "1883" => Connection port to the broker.
-**MessageBuilderConfiguration**: Sets configuration for the message builder. This builder creates messages that will ne published. Here I used the "SinusValueMessageBuilder".
-**MessageBuilderType**: "SinusValueMessageBuilder" => Messages will be a json with a sinus curve.
-**Increment**: "2" => Configuration for the SinusValueMessageBuilder: The increment of the sinus angle of each tick (standard = 1).
-**Amplitude**: "3" => Configuration for the SinusValueMessageBuilder: The amplitude of the curve.
-**StartWithRandomAngle**: "false" => Configuration for the SinusValueMessageBuilder: Starts with a random angle if true.
-**ClientConfiguration**: Sets configuration for the clients that will connect to the broker.
-**ClientType**: "ProbabilityBrokerClient" => Client will act on configured probabilities.
-**TopicList**: ["test1", "test2", "test3"] => A list of topics that the client can subscribe and publish to.
-**ConnectProbability**: 150 => Configuration for the ProbabilityBrokerClient: Client will connect in 150 of 1000 ticks if it is not connected.
-**DiscConnectProbability**: 10 => Configuration for the ProbabilityBrokerClient: Client will disconnect in 10 of 1000 ticks if it is connected.
-**AddSubscriptionProbability**: 150 => Configuration for the ProbabilityBrokerClient: Client will subscribe to a topic in 150 of 1000 ticks if it is connected.
-**RemoveSubscriptionProbability**: 150 => Configuration for the ProbabilityBrokerClient: Client will unsubscribe to a topic in 150 of 1000 ticks if it is connected.
-**PublishProbability**: 500 => Configuration for the ProbabilityBrokerClient: Client will publish a message (created by the SinusValueMessageBuilder) in 500 of 1000 ticks if it is connected.
+
+- **TickMs**: 1000 => Sets the time between each tick.
+- **TestDurationInMinutes**: 3 => Duration in Minutes. The program will shut down after this time.
+- **ClientCount**: "20" => This will create 20 clients that run in parallel.
+- **BrokerConfiguration** => Configuration parameters for the broker endpoint.
+- **BrokerType**: "Mqtt" => Clients will connect to a MQTT Broker
+- **BrokerEndpoint**: "hivemq" => Broker address (hivemq due to the docker-compose file. For local running broker use "127.0.0.1")
+- **BrokerPort**: "1883" => Connection port to the broker.
+- **MessageBuilderConfiguration**: Sets configuration for the message builder. This builder creates messages that will ne published. Here I used the "SinusValueMessageBuilder".
+- **MessageBuilderType**: "SinusValueMessageBuilder" => Messages will be a json with a sinus curve.
+- **Increment**: "2" => Configuration for the SinusValueMessageBuilder: The increment of the sinus angle of each tick (standard = 1).
+- **Amplitude**: "3" => Configuration for the SinusValueMessageBuilder: The amplitude of the curve.
+- **StartWithRandomAngle**: "false" => Configuration for the SinusValueMessageBuilder: Starts with a random angle if true.
+- **ClientConfiguration**: Sets configuration for the clients that will connect to the broker.
+- **ClientType**: "ProbabilityBrokerClient" => Client will act on configured probabilities.
+- **TopicList**: ["test1", "test2", "test3"] => A list of topics that the client can subscribe and publish to.
+- **ConnectProbability**: 150 => Configuration for the ProbabilityBrokerClient: Client will connect in 150 of 1000 ticks if it is not connected.
+- **DiscConnectProbability**: 10 => Configuration for the ProbabilityBrokerClient: Client will disconnect in 10 of 1000 ticks if it is connected.
+- **AddSubscriptionProbability**: 150 => Configuration for the ProbabilityBrokerClient: Client will subscribe to a topic in 150 of 1000 ticks if it is connected.
+- **RemoveSubscriptionProbability**: 150 => Configuration for the ProbabilityBrokerClient: Client will unsubscribe to a topic in 150 of 1000 ticks if it is connected.
+- **PublishProbability**: 500 => Configuration for the ProbabilityBrokerClient: Client will publish a message (created by the SinusValueMessageBuilder) in 500 of 1000 ticks if it is connected.
 
 ## How to start
 
@@ -131,6 +132,14 @@ Example Configuration:
     }
 }
 ```
+
+## Yet to come
+
+- Tests: Yes there will be tests
+- Brokers: Kafka, Rabbitmq, Nats, (what else would you like?)
+- UI: Blazor page for status and configuration
+- Finished container in docker hub
+- 
 
 ## Known Issues
 
