@@ -139,7 +139,7 @@ Example Configuration:
 - Brokers: Kafka, Rabbitmq, Nats, (what else would you like?)
 - UI: Blazor page for status and configuration
 - Finished container in docker hub
-- 
+- Message timing statistics
 
 ## Known Issues
 
