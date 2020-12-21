@@ -1,0 +1,20 @@
+version: "3.5"
+
+services:
+  brokertester:
+    image: brokertester
+    container_name: brokertester
+    hostname: brokertester
+    depends_on:
+      - "hivemq"
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  hivemq:
+    image: hivemq/hivemq4
+    container_name: hivemq
+    hostname: hivemq
+    ports:
+      - 1883:1883
+      - 8080:8080

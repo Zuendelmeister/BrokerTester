@@ -1,0 +1,25 @@
+{
+	"TickMs": 1000,
+	"TestDurationInMinutes": 3,
+	"ClientCount": 20,
+	"BrokerConfiguration": {
+		"BrokerType": "Mqtt",
+		"BrokerEndpoint": "hivemq",
+		"BrokerPort": "1883",
+	},
+	"MessageBuilderConfiguration": {
+		"MessageBuilderType": "SinusValueMessageBuilder",
+		"Increment": "2",
+		"Amplitude": "5",
+		"StartWithRandomAngle": true,
+	},
+	"ClientConfiguration": {
+		"ClientType": "ProbabilityClient",
+		"TopicList": ["test1", "test2", "test3"],
+		"ConnectProbability": 150,
+		"DiscConnectProbability": 10,
+		"AddSubscriptionProbability": 150,
+		"RemoveSubscriptionProbability": 150,
+		"PublishProbability": 500
+	}
+}
