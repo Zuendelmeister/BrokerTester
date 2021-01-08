@@ -1,6 +1,4 @@
 {
-	"TickMs": 1000,
-	"TestDurationInMinutes": 3,
 	"ClientCount": 20,
 	"BrokerConfiguration": {
 		"BrokerType": "Mqtt",
@@ -20,6 +18,8 @@
 		"DiscConnectProbability": 10,
 		"AddSubscriptionProbability": 150,
 		"RemoveSubscriptionProbability": 150,
-		"PublishProbability": 500
+		"PublishProbability": 500,
+		"TestDurationInMinutes": 3,
+		"TickMs": 1000
 	}
 }

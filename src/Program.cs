@@ -9,7 +9,6 @@ namespace MessageBrokerTester
         {
             try
             {
-                //var factory = new MotherFactory(@"C:\Work\gits\priv\MessageBrokerTester\configuration\configuration_Kafka-Probability-IntArray.json");
                 var factory = new MotherFactory();
                 factory.BuildAndRunClients().Wait();
             }
